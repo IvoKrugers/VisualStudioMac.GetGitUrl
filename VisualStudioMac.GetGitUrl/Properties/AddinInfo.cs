@@ -9,7 +9,7 @@ using VisualStudioMac.GetGitUrl;
     Category = "IDE extensions"
 )]
 
-[assembly: AddinName("Get Git Repo URL of selected lines")]
+[assembly: AddinName("Ivo: Get Git Repo URL of selected lines")]
 [assembly: AddinDescription("This extension copies the URL of the selected lines in the connected Git Repo to the clipboard. GITHUB and Azure DevOps are supported.\n\nby Ivo Krugers")]
 [assembly: AddinAuthor("Ivo Krugers")]
 [assembly: AddinUrl("https://github.com/IvoKrugers")]
