@@ -1,20 +1,32 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ExtensionModel>
-	<Runtime>
+<Addin name        = "Get Git Repo URL of selected lines"
+       id          = "GetGitUrl"
+       namespace   = "VisualStudioMac"
+       author      = "Ivo Krugers"
+       copyright   = "MIT X11"
+       url         = "https://github.com/IvoKrugers/VisualStudioMac.GetGitUrl"
+       description = "This extension copies the URL of the selected lines in the connected Git Repo to the clipboard. GITHUB and Azure DevOps are supported.\n\nby Ivo Krugers"
+       category    = "IDE extensions"
+       version     = "17.3.2">
+
+   <Runtime>
 		<Import assembly="VisualStudioMac.GetGitUrl.dll" />
 	</Runtime>
+
 	<!-- Commands -->
 	<Extension path="/MonoDevelop/Ide/Commands">
 		<Command id="VisualStudioMac.GetGitUrl.CommandHandlers.GetGitUrlCommandHandler" _label="Copy Git Url for selected line(s).." defaultHandler="VisualStudioMac.GetGitUrl.CommandHandlers.GetGitUrlCommandHandler" />
 	</Extension>
+
 	<!-- Editor Context Menu -->
 	<Extension path="/MonoDevelop/TextEditor/ContextMenu/Editor">
 		<Condition id="FileType" fileExtensions=".cs">
 			<CommandItem id="VisualStudioMac.GetGitUrl.CommandHandlers.GetGitUrlCommandHandler" />
 		</Condition>
 	</Extension>
+
 	<!-- Main Tool Menu Entries -->
 	<Extension path="/MonoDevelop/Ide/MainMenu/Tools">
 		<CommandItem id="VisualStudioMac.GetGitUrl.CommandHandlers.GetGitUrlCommandHandler" />
 	</Extension>
-</ExtensionModel>
+</Addin>
