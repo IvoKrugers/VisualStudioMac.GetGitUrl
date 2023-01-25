@@ -14,13 +14,14 @@ namespace VisualStudioMac.GetGitUrl.GitHub
         List<Tuple<string, string>> properties = new List<Tuple<string, string>>();
 
         public IEnumerable<string> Keys
-        {
-            get { return properties.Select(p => p.Item1); }
-        }
+            => properties.Select(p => p.Item1);
+
 
         public string GetValue(string key)
         {
-            return properties.Where(p => p.Item1 == key).Select(p => p.Item2).FirstOrDefault();
+            return properties
+                .Where(p => p.Item1 == key)
+                .Select(p => p.Item2).FirstOrDefault();
         }
 
         public void SetValue(string key, string value)

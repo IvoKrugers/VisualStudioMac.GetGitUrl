@@ -15,4 +15,8 @@
             <Private>False</Private>
         </Reference>
     </ItemGroup>
+  <ItemGroup>
+    <None Remove="VisualStudioMac.ExtensionsHelper" />
+    <None Remove="VisualStudioMac.ExtensionHelper" />
+  </ItemGroup>
 </Project>

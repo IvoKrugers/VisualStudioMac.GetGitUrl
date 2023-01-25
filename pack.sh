@@ -1,27 +1,32 @@
 #!/bin/sh
+clear
 
+# Get and goto folder of this script's location
 SCRIPTFILE=$0
-
-#Get the absolute path to the containing folder
 PROJECTFOLDER=${SCRIPTFILE%/*}
-
 cd ${PROJECTFOLDER}
-
-pwd
-
 PROJECTFOLDER=$(pwd)
 
+# Clean
 rm *.mpack
 
 # Pack
-mono /Applications/Visual\ Studio.app/Contents/Resources/lib/monodevelop/bin/vstool.exe setup pack ./VisualStudioMac.GetGitUrl/bin/VisualStudioMac.GetGitUrl.dll
+/Applications/Visual\ Studio.app/Contents/MacOS/vstool setup pack /Users/ivokrugers/Xamarin_Projects/VisualStudioMac.GetGitUrl/VisualStudioMac.GetGitUrl/bin/VisualStudioMac.GetGitUrl.dll
+
+
+# Copy to local dir
+for filename in /Applications/Visual\ Studio\.app/*GetGitUrl*.mpack;
+do
+  echo "move $filename"
+  mv "$filename" .
+done
 
 # Uninstall
-/Applications/Visual\ Studio\ \(Preview\).app/Contents/MacOS/vstool setup uninstall VisualStudioMac.GetGitUrl -y
+# /Applications/Visual\ Studio\ \(Preview\).app/Contents/MacOS/vstool setup uninstall VisualStudioMac.SolutionTreeFilter -y
 
 # # Install
 # for filename in *.mpack;
 # do
 #   echo "$filename"
-#   /Applications/Visual\ Studio\ \(Preview\).app/Contents/MacOS/vstool setup install "$PROJECTFOLDER/$filename"
+#   /Applications/Visual\ Studio\ \(Preview\).app/Contents/MacOS/vstool setup install "$PROJECTFOLDER/$filename" -y
 # done

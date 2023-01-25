@@ -1,13 +1,15 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<Addin name        = "Get Git Repo URL of selected lines"
+<Addin name        = "VSM: Get Git Repo URL of selected lines"
        id          = "GetGitUrl"
        namespace   = "VisualStudioMac"
        author      = "Ivo Krugers"
        copyright   = "MIT X11"
        url         = "https://github.com/IvoKrugers/VisualStudioMac.GetGitUrl"
-       description = "This extension copies the URL of the selected lines in the connected Git Repo to the clipboard. GITHUB and Azure DevOps are supported.\n\nby Ivo Krugers"
+       description = "This extension copies the URL of the selected lines in the connected Git Repo to the clipboard. GITHUB and Azure DevOps are supported.
+
+by Ivo Krugers"
        category    = "IDE extensions"
-       version     = "17.3.2">
+       version     = "17.4.3">
 
    <Runtime>
 		<Import assembly="VisualStudioMac.GetGitUrl.dll" />
@@ -15,7 +17,9 @@
 
 	<!-- Commands -->
 	<Extension path="/MonoDevelop/Ide/Commands">
-		<Command id="VisualStudioMac.GetGitUrl.CommandHandlers.GetGitUrlCommandHandler" _label="Copy Git Url for selected line(s).." defaultHandler="VisualStudioMac.GetGitUrl.CommandHandlers.GetGitUrlCommandHandler" />
+		<Command id="VisualStudioMac.GetGitUrl.CommandHandlers.GetGitUrlCommandHandler"
+				_label="Copy Git Url for selected line(s).."
+				defaultHandler="VisualStudioMac.GetGitUrl.CommandHandlers.GetGitUrlCommandHandler" />
 	</Extension>
 
 	<!-- Editor Context Menu -->
@@ -27,6 +31,10 @@
 
 	<!-- Main Tool Menu Entries -->
 	<Extension path="/MonoDevelop/Ide/MainMenu/Tools">
-		<CommandItem id="VisualStudioMac.GetGitUrl.CommandHandlers.GetGitUrlCommandHandler" />
+		<!--<SeparatorItem id="ExtensionSettingsSeparator"/>-->
+		<SeparatorItem id="ExtensionSettingsSeparator" />
+		<CommandItem id="VisualStudioMac.GetGitUrl.CommandHandlers.GetGitUrlCommandHandler" insertafter="ExtensionSettingsSeparator" />
+		<!--<CommandItem id="VisualStudioMac.GetGitUrl.CommandHandlers.GetGitUrlCommandHandler"/>-->
+		<SeparatorItem id="ExtensionSettingsSeparatorEnd" />
 	</Extension>
 </Addin>
