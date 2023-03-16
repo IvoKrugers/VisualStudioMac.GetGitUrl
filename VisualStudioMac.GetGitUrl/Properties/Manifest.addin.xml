@@ -9,7 +9,7 @@
 
 by Ivo Krugers"
        category    = "IDE extensions"
-       version     = "17.4.3">
+       version     = "17.5.1">
 
    <Runtime>
 		<Import assembly="VisualStudioMac.GetGitUrl.dll" />
@@ -32,9 +32,9 @@ by Ivo Krugers"
 	<!-- Main Tool Menu Entries -->
 	<Extension path="/MonoDevelop/Ide/MainMenu/Tools">
 		<!--<SeparatorItem id="ExtensionSettingsSeparator"/>-->
-		<SeparatorItem id="ExtensionSettingsSeparator" />
-		<CommandItem id="VisualStudioMac.GetGitUrl.CommandHandlers.GetGitUrlCommandHandler" insertafter="ExtensionSettingsSeparator" />
+		<SeparatorItem insertbefore="MonoDevelop.Ide.Commands.EditCommands.MonodevelopPreferences"/>
+		<CommandItem id="VisualStudioMac.GetGitUrl.CommandHandlers.GetGitUrlCommandHandler" insertafter="OptionsSection" />
 		<!--<CommandItem id="VisualStudioMac.GetGitUrl.CommandHandlers.GetGitUrlCommandHandler"/>-->
-		<SeparatorItem id="ExtensionSettingsSeparatorEnd" />
+		<!--<SeparatorItem id="ExtensionSettingsSeparatorEnd" />-->
 	</Extension>
 </Addin>
